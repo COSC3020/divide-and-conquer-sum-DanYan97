@@ -25,3 +25,16 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+By ignoring the constant factor(splitting array=O(1), combining results=O(1)), the $T(n)=3T(\frac{n}{3})$, becuase the array devided into
+3 parts, so each part will have n/3 elements, sum each part recursivly so that
+$T(n)=3T(\frac{n}{3})$
+
+Using the substitution method to solve this relation:
+1. Substituing into the original equation: $T(n)=3[3T(\frac{n}{9})]=9T(\frac{n}{9})$
+2. Do substitution again: $T(n)=9T(\frac{n}{9})=3[9T(\frac{n}{27})]=27T(\frac{n}{27})$
+3. Find the pattern: $T(n)=3^iT(\frac{n}{3^i})$
+4. To make $\frac{n}{3^i}=1$, $i=log_3n$, So that $T(n)=3^{\log_3n}T(1)$
+5. Simplifing $T(n)=3^{\log_3n}T(1)=\Theta(n)$
+
+Therefore, $T(n)=\Theta(n)$
