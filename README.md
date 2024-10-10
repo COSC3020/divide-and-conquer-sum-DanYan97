@@ -33,8 +33,8 @@ Using the substitution method to solve this relation:
 2. Do substitution again: $T(n)=9T(\frac{n}{9})+4C=3[9T(\frac{n}{27})+4C]+C=27T(\frac{n}{27})+13C$
 3. Find the pattern: $T(n)=3^iT(\frac{n}{3^i})+ \sum_{k=0}^{i-1} 3^k C$
 4. To make $\frac{n}{3^i}=1$, $i=log_3n$, So that $T(n)=3^{\log_3n}T(1)+ \sum_{k=0}^{i-1} 3^k C$
-5. Simplifing $T(n)=3^{\log_3n}T(1)+ \sum_{k=0}^{i-1} 3^k C=\Theta(n)$
+5. Simplifing and ignoring the constant: $T(n)=3^{\log_3n}T(1)+ \sum_{k=0}^{i-1} 3^k C=n$
 
-Therefore, $T(n)=\Theta(n)$
+Therefore, $T(n)=n\in\Theta(n)$
 
 “I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.” --Doris Yan
